@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.9
+    ####   /go/src/github.com/circleci/go-tool
+    ####   /go/src/bitbucket.org/circleci/go-tool
+    working_directory: /go/src/github.com/rvelaz/mythril-junit-report
+    steps:
+      - checkout
+      - run: go test -v ./...
