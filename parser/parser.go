@@ -68,3 +68,12 @@ func Parse(r io.Reader, pkgName string) (*Suite, error) {
 
 	return suite, err
 }
+
+
+func (s *Suite) Failures() int {
+	failures := 0
+	for _, ft := range s.FileTest {
+		failures = failures + ft.FailedTests
+	}
+	return failures
+}
