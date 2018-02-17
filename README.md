@@ -1,6 +1,7 @@
 # mythril-junit-report
 
-It parses the output of mythril analysis on solidity files and creates an ouput compatible with JUnit
+It parses the output of mythril analysis on solidity files and creates an ouput compatible with JUnit. A sample of the expected
+data by the tool can be found in the tests directory, as well as the produced output.
  
 
 ## Installation
@@ -28,7 +29,8 @@ cat mythril-results.json | mythril-junit-report > report.xml
 
 ### Using docker
 Let's suppose we have a result file (mythril-results.json) containing multiple test outputs in */path/to/folder_with_test_result*.
-The report in JUnit format could be generated using docker with the following command:  
+The report in JUnit format could be generated using docker with the following command:
+
 
 ```bash
 docker run --rm -it -v /path/to/folder_with_test_result:/usr/src/myapp \
