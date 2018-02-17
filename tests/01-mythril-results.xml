@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="1" failures="1" time="" name="package/name">
+		<properties></properties>
+		<testcase classname="name" name="withdrawfunds()" time="">
+			<failure message="Ether send" type="Warning">In the function &#39;withdrawfunds()&#39; a non-zero amount of Ether is sent to msg.sender.&#xA;Call value is balance_at_1461501637330902918203684832716283019655932542975 &amp; address.&#xA;&#xA;There is a check on storage index 7. This storage slot can be written to by calling the function &#39;crowdfunding()&#39;.</failure>
+		</testcase>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="" name="package/name">
+		<properties></properties>
+	</testsuite>
+	<testsuite tests="1" failures="1" time="" name="package/name">
+		<properties></properties>
+		<testcase classname="name" name="transferOwnership(address)" time="">
+			<failure message="Use of tx.origin" type="Warning">Function transferOwnership(address) retrieves the transaction origin (tx.origin) using the ORIGIN opcode. Use tx.sender instead.&#xA;See also: https://solidity.readthedocs.io/en/develop/security-considerations.html#tx-origin</failure>
+		</testcase>
+	</testsuite>
+	<testsuite tests="2" failures="2" time="" name="package/name">
+		<properties></properties>
+		<testcase classname="name" name="withdraw(uint256)" time="">
+			<failure message="CALL with gas to dynamic address" type="Warning">The function withdraw(uint256) contains a function call to the address of the transaction sender. The available gas is forwarded to the called contract. Make sure that the logic of the calling contract is not adversely affected if the called contract misbehaves (e.g. reentrancy).</failure>
+		</testcase>
+		<testcase classname="name" name="withdraw(uint256)" time="">
+			<failure message="Unchecked CALL return value" type="Informational">The function withdraw(uint256) contains a call to msg.sender.&#xA;The return value of this call is not checked. Note that the function will continue to execute with a return value of &#39;0&#39; if the called contract throws.</failure>
+		</testcase>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="" name="package/name">
+		<properties></properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="" name="package/name">
+		<properties></properties>
+	</testsuite>
+	<testsuite tests="2" failures="2" time="" name="package/name">
+		<properties></properties>
+		<testcase classname="name" name="sendeth(address,uint256)" time="">
+			<failure message="Integer Underflow" type="Warning">A possible integer underflow exists in the function sendeth(address,uint256).&#xA;The SUB instruction at address 649 may result in a value &lt; 0.</failure>
+		</testcase>
+		<testcase classname="name" name="sendeth(address,uint256)" time="">
+			<failure message="Integer Underflow" type="Warning">A possible integer underflow exists in the function sendeth(address,uint256).&#xA;The SUB instruction at address 567 may result in a value &lt; 0.</failure>
+		</testcase>
+	</testsuite>
+	<testsuite tests="1" failures="1" time="" name="package/name">
+		<properties></properties>
+		<testcase classname="name" name="_function_0xe9874106" time="">
+			<failure message="Weak random" type="Warning">In the function &#39;_function_0xe9874106&#39; the following predictable state variables are used to determine Ether recipient:&#xA;- block.coinbase&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>
