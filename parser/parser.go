@@ -28,9 +28,6 @@ type TestResult struct {
 	Address     int    `json:"address"`
 }
 
-// Parse parses go test output from reader r and returns a report with the
-// results. An optional pkgName can be given, which is used in case a package
-// result line is missing.
 func Parse(r io.Reader, pkgName string) (*Suite, error) {
 	reader := bufio.NewReader(r)
 	suite := &Suite{make([]*FileTest, 0)}

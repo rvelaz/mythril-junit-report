@@ -3,6 +3,7 @@
 It parses the output of mythril analysis on solidity files and creates an ouput compatible with JUnit. A sample of the expected
 data by the tool can be found in the tests directory, as well as the produced output.
  
+[![CircleCI](https://circleci.com/gh/rvelaz/mythril-junit-report.svg?style=svg)](https://circleci.com/gh/rvelaz/mythril-junit-report)
 
 ## Installation
 Go version 1. or higher is required. Install or update using the go get command:
@@ -10,7 +11,6 @@ Go version 1. or higher is required. Install or update using the go get command:
 ```bash
 go get -u github.com/rvelaz/mythril-junit-report
 ```
-
 
 ## Usage
 mythril-junit-report reads the mythril test output in json format from standard in and writes junit compatible XML to standard out.
@@ -37,3 +37,6 @@ docker run --rm -it -v /path/to/folder_with_test_result:/usr/src/myapp \
         -w /usr/src/myapp golang:1.9 \
         bash -c "go get -u github.com/rvelaz/mythril-junit-report && cat mythril-results.json | mythril-junit-report > report.xml"
 ```
+
+### Credits
+This tool is based on @jstemmer's  [go-junit-report](https://github.com/jstemmer/go-junit-report/blob/master/README.md)
